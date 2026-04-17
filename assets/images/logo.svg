@@ -1,0 +1,38 @@
+<svg width="900" height="240" viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00c853"/>
+      <stop offset="100%" stop-color="#64dd17"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Texto Gym -->
+  <text x="60" y="140" font-family="Poppins, Montserrat, Arial, sans-serif" font-size="90" font-weight="700" fill="#FFFFFF" letter-spacing="-2">
+    Gym
+  </text>
+
+  <!-- Texto Upper -->
+  <text x="240" y="140" font-family="Poppins, Montserrat, Arial, sans-serif" font-size="90" font-weight="700" fill="url(#gradGreen)" letter-spacing="-2">
+    Upper
+  </text>
+
+  <!-- .com.br -->
+  <text x="460" y="180" font-family="Poppins, Arial, sans-serif" font-size="28" fill="#9E9E9E">
+    .com.br
+  </text>
+
+  <!-- Barras -->
+  <rect x="650" y="120" width="14" height="35" fill="#DADADA"/>
+  <rect x="670" y="105" width="14" height="50" fill="#DADADA"/>
+  <rect x="690" y="85" width="14" height="70" fill="#DADADA"/>
+
+  <!-- Curva -->
+  <path d="M630 140 C670 95, 720 70, 780 40"
+        stroke="url(#gradGreen)"
+        stroke-width="10"
+        fill="none"
+        stroke-linecap="round"/>
+
+  <!-- Seta -->
+  <polygon points="780,40 755,48 768,68" fill="url(#gradGreen)"/>
+</svg>

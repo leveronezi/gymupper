@@ -10,8 +10,8 @@ add_action('after_setup_theme', function () {
     add_theme_support('custom-logo');
 
     register_nav_menus([
-        'primary' => __('Menu Principal', 'wp-theme-base'),
-        'footer'  => __('Menu Rodapé', 'wp-theme-base'),
+        'primary' => __('Menu Principal', 'gymupper'),
+        'footer'  => __('Menu Rodapé', 'gymupper'),
     ]);
 });
 
