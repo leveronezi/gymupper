@@ -1,96 +1,106 @@
-<section style="position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:#0b0f1a" class="bg-grid">
+<section class="relative min-h-screen flex items-center overflow-hidden bg-dark bg-grid-pattern" id="inicio">
 
-  <div class="glow-blob" style="width:700px;height:700px;top:-200px;left:-200px;opacity:0.5"></div>
-  <div class="glow-blob" style="width:500px;height:500px;bottom:-100px;right:-100px;opacity:0.3"></div>
+  <div class="glow-orb w-[600px] h-[600px] -top-40 -left-32 opacity-60" aria-hidden="true"></div>
+  <div class="glow-orb w-[400px] h-[400px] bottom-0 right-0 opacity-30" aria-hidden="true"></div>
 
-  <div style="max-width:1200px;margin:0 auto;padding:5rem 1.5rem;position:relative;z-index:1;width:100%">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <div class="section-wrap py-20 md:py-28 relative z-10 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
-      <div>
-        <div class="badge reveal" style="margin-bottom:1.5rem">
-          <span style="width:6px;height:6px;border-radius:50%;background:#64dd17;display:inline-block"></span>
-          Especialistas em academias
+      <div class="hero-fade flex flex-col">
+        <div>
+          <span class="badge">
+            <span class="w-1.5 h-1.5 rounded-full bg-lime inline-block" aria-hidden="true"></span>
+            Especialistas em academias
+          </span>
         </div>
-
-        <h1 class="reveal" style="font-size:clamp(2.4rem,5vw,3.75rem);font-weight:900;line-height:1.08;animation-delay:.1s">
-          Levamos sua<br>academia ao<br>
-          <span class="text-gradient">topo!</span>
+        <h1 class="text-display mt-5">
+          Levamos sua<br>academia ao<br><span class="text-gradient">topo!</span>
         </h1>
-
-        <p class="reveal" style="color:#8892a4;font-size:1.1rem;line-height:1.75;margin-top:1.5rem;max-width:460px;animation-delay:.2s">
-          Performance real para academias. Unimos tráfego pago local, SEO e estratégias de conversão para encher sua grade de alunos todos os meses.
+        <p class="text-subtle text-lg leading-relaxed mt-6 max-w-[440px]">
+          Performance real para academias. Unimos tráfego pago local, SEO e conversão para encher sua grade de alunos todo mês.
         </p>
-
-        <div class="reveal" style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.5rem;animation-delay:.3s">
+        <div class="flex flex-wrap items-center gap-4 mt-10">
           <a href="<?php echo esc_url(theme_whatsapp_link('Quero levar minha academia ao topo!')); ?>"
-             target="_blank" class="btn-primary animate-pulse-btn" style="font-size:1rem;padding:1rem 2.25rem">
+             target="_blank" rel="noopener"
+             class="btn btn-primary btn-cta-pulse">
             Quero mais alunos
-            <svg style="width:1.1rem;height:1.1rem" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
           </a>
-          <a href="#como-funciona" class="btn-outline" style="font-size:1rem;padding:1rem 2.25rem">Ver como funciona</a>
+          <a href="#como-funciona" class="btn btn-ghost">Ver como funciona</a>
         </div>
-
-        <div class="reveal" style="display:flex;align-items:center;gap:1rem;margin-top:2.5rem;animation-delay:.4s">
-          <div style="display:flex">
-            <?php foreach(['A','B','R','M'] as $i => $l): ?>
-            <div style="width:2.25rem;height:2.25rem;border-radius:50%;background:linear-gradient(135deg,#1e2740,#131929);border:2px solid #0b0f1a;<?php echo $i>0?'margin-left:-0.6rem':''; ?>;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#64dd17">
-              <?php echo $l; ?>
-            </div>
+        <div class="flex items-center gap-4 mt-10 pt-8 border-t border-white/5">
+          <div class="flex -space-x-2.5" aria-hidden="true">
+            <?php foreach (['A','B','R','M'] as $initial): ?>
+              <div class="avatar-ring"><?php echo esc_html($initial); ?></div>
             <?php endforeach; ?>
           </div>
           <div>
-            <div style="display:flex;gap:1px;color:#f59e0b;font-size:0.8rem">★★★★★</div>
-            <p style="font-size:0.78rem;color:#8892a4;margin-top:2px">+200 academias atendidas</p>
+            <div class="flex gap-0.5" aria-label="Avaliação 5 estrelas">
+              <?php for ($i = 0; $i < 5; $i++): ?>
+                <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              <?php endfor; ?>
+            </div>
+            <p class="text-xs text-muted mt-0.5">+200 academias atendidas</p>
           </div>
         </div>
       </div>
 
       <div class="hidden lg:flex justify-end">
-        <div class="animate-float" style="position:relative;width:400px">
-          <div class="card" style="padding:1.75rem;position:relative;overflow:hidden">
-            <div class="glow-blob" style="width:300px;height:300px;top:-100px;right:-100px;opacity:0.4"></div>
-            <div style="position:relative;z-index:1">
-              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem">
+        <div class="relative animate-float">
+          <div class="card-metric w-[372px]">
+            <div class="metric-glow" aria-hidden="true"></div>
+            <div class="relative z-10 flex flex-col gap-5">
+              <div class="flex items-start justify-between">
                 <div>
-                  <p style="font-size:0.7rem;color:#8892a4;letter-spacing:.08em;text-transform:uppercase">Novos alunos / mês</p>
-                  <p class="stat-number" style="margin-top:.25rem">+127</p>
+                  <p class="text-[10px] text-muted tracking-widest uppercase">Novos alunos / mês</p>
+                  <p class="text-4xl font-black text-gradient mt-1 leading-none">+127</p>
                 </div>
-                <div style="background:#00c85220;border:1px solid #00c85340;border-radius:.5rem;padding:.6rem">
-                  <svg style="width:1.4rem;height:1.4rem;color:#64dd17;stroke:#64dd17" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="icon-box">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                   </svg>
                 </div>
               </div>
-              <div style="display:flex;gap:5px;align-items:flex-end;height:60px;margin-bottom:1.25rem">
-                <?php foreach([28,42,35,58,50,72,65,88,80,100] as $h): ?>
-                  <div style="flex:1;border-radius:3px 3px 0 0;background:linear-gradient(to top,#00c853,#64dd17);height:<?php echo $h; ?>%;opacity:.8"></div>
+              <div class="mini-bar-chart" role="img" aria-label="Gráfico de crescimento mensal">
+                <?php foreach ([28,42,36,58,50,72,65,88,80,100] as $h): ?>
+                  <div class="mini-bar" style="height:<?php echo esc_attr($h); ?>%"></div>
                 <?php endforeach; ?>
               </div>
-              <div style="display:flex;justify-content:space-between;font-size:.7rem;color:#8892a4;margin-bottom:1.25rem">
+              <div class="flex justify-between text-[10px] text-muted -mt-2" aria-hidden="true">
                 <span>Jan</span><span>Fev</span><span>Mar</span><span>Abr</span><span>Mai</span>
               </div>
-              <div style="height:1px;background:rgba(255,255,255,.06);margin-bottom:1.25rem"></div>
-              <div style="display:flex;gap:.75rem">
-                <div style="flex:1;background:#131929;border-radius:.5rem;padding:.75rem;text-align:center">
-                  <p style="font-size:.65rem;color:#8892a4">Conversão</p>
-                  <p style="font-size:1.2rem;font-weight:800;color:#64dd17;margin-top:.15rem">+34%</p>
+              <hr class="border-white/5">
+              <div class="grid grid-cols-2 gap-3">
+                <div class="mini-stat">
+                  <p class="mini-stat-value">+34%</p>
+                  <p class="mini-stat-label">Conversão</p>
                 </div>
-                <div style="flex:1;background:#131929;border-radius:.5rem;padding:.75rem;text-align:center">
-                  <p style="font-size:.65rem;color:#8892a4">Custo/lead</p>
-                  <p style="font-size:1.2rem;font-weight:800;color:#64dd17;margin-top:.15rem">↓62%</p>
+                <div class="mini-stat">
+                  <p class="mini-stat-value">↓62%</p>
+                  <p class="mini-stat-label">Custo / lead</p>
                 </div>
               </div>
             </div>
           </div>
-          <div style="position:absolute;top:-1.25rem;right:-1.25rem;background:linear-gradient(135deg,#00c853,#64dd17);border-radius:.75rem;padding:.75rem 1rem;color:#0b0f1a;font-weight:800;text-align:center;box-shadow:0 8px 32px #00c85550">
-            <p style="font-size:1.5rem;font-weight:900;line-height:1">R$4,80</p>
-            <p style="font-size:.65rem;font-weight:600;opacity:.8">custo por lead</p>
+          <div class="floating-badge">
+            <p class="floating-badge-value">R$4,80</p>
+            <p class="floating-badge-label">custo por lead</p>
           </div>
         </div>
       </div>
 
     </div>
   </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted text-[11px] animate-float" aria-hidden="true">
+    <span>Role para baixo</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </div>
+
 </section>

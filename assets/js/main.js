@@ -1,54 +1,102 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Mobile menu ─────────────────────────────────────────────────
-  const toggle = document.getElementById('menu-toggle');
-  const menu   = document.getElementById('mobile-menu');
-  if (toggle && menu) {
-    toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
-  }
-
   // ── Header scroll effect ─────────────────────────────────────────
   const header = document.getElementById('site-header');
   if (header) {
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    const tick = () => header.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', tick, { passive: true });
+    tick();
   }
 
-  // ── Smooth scroll anchors ────────────────────────────────────────
+  // ── Mobile menu (animated height) ────────────────────────────────
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuBars   = menuToggle ? menuToggle.querySelectorAll('.menu-bar') : [];
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('open');
+
+      mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+
+      // Animate burger → X
+      if (!isOpen) {
+        menuBars[0]?.classList.add('rotate-45', 'translate-y-[7px]');
+        menuBars[1]?.classList.add('opacity-0');
+        menuBars[2]?.classList.add('-rotate-45', '-translate-y-[7px]');
+      } else {
+        menuBars[0]?.classList.remove('rotate-45', 'translate-y-[7px]');
+        menuBars[1]?.classList.remove('opacity-0');
+        menuBars[2]?.classList.remove('-rotate-45', '-translate-y-[7px]');
+      }
+    });
+
+    // Close on anchor click
+    mobileMenu.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuBars[0]?.classList.remove('rotate-45', 'translate-y-[7px]');
+        menuBars[1]?.classList.remove('opacity-0');
+        menuBars[2]?.classList.remove('-rotate-45', '-translate-y-[7px]');
+      });
+    });
+  }
+
+  // ── Smooth scroll (offset for fixed header) ───────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       const id = link.getAttribute('href');
+      if (id === '#') return;
       const target = document.querySelector(id);
-      if (target) {
-        e.preventDefault();
-        const offset = 80;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-        menu?.classList.add('hidden');
-      }
+      if (!target) return;
+      e.preventDefault();
+      const offset = 80;
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - offset,
+        behavior: 'smooth',
+      });
     });
   });
 
-  // ── Scroll reveal ────────────────────────────────────────────────
+  // ── Scroll reveal ─────────────────────────────────────────────────
   const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
+
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const io = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
     revealEls.forEach(el => io.observe(el));
   } else {
     revealEls.forEach(el => el.classList.add('visible'));
   }
 
-  // ── Animate-fade-up on first load ───────────────────────────────
-  document.querySelectorAll('.animate-fade-up').forEach((el, i) => {
-    el.style.animationDelay = el.style.animationDelay || `${i * 0.1}s`;
-  });
+  // ── Stagger: trigger children after parent becomes visible ────────
+  const staggerWrappers = document.querySelectorAll('.stagger');
+  if ('IntersectionObserver' in window && staggerWrappers.length) {
+    const staggerIO = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.reveal').forEach(child => {
+              child.classList.add('visible');
+            });
+            staggerIO.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    staggerWrappers.forEach(el => staggerIO.observe(el));
+  }
 
 });
