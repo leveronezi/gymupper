@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #e11d48;
+  --color-secondary: #1e293b;
+  --color-accent: #f59e0b;
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-body text-slate-800 bg-white; }
+  h1, h2, h3, h4, h5, h6 { @apply font-heading font-bold; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:opacity-90 transition-opacity;
+  }
+  .btn-secondary {
+    @apply inline-block px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors;
+  }
+  .section {
+    @apply py-16 px-4 max-w-6xl mx-auto;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-4;
+  }
+  .section-subtitle {
+    @apply text-lg text-slate-500 text-center mb-12 max-w-2xl mx-auto;
+  }
+}
