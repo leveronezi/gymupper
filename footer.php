@@ -1,5 +1,3 @@
-</div><!-- /#page-content -->
-
 <footer class="bg-surface border-t border-white/5">
 
   <div class="max-w-[1200px] mx-auto px-6 py-16">
@@ -77,7 +75,7 @@
 
     <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
       <p class="text-xs text-muted">&copy; <?php echo esc_html(date('Y')); ?> GymUpper. Todos os direitos reservados.</p>
-      <p class="text-xs text-muted">Levamos sua academia ao topo 🚀</p>
+      <p class="text-xs text-muted">Levamos sua academia ao topo.</p>
     </div>
   </div>
 

@@ -5,11 +5,11 @@
   <div class="section-wrap relative z-10">
 
     <div class="section-header centered stagger">
-      <span class="section-label">Depoimentos</span>
-      <h2 class="text-h2">
+      <span class="section-label reveal">Depoimentos</span>
+      <h2 class="text-h2 reveal">
         Academias que foram ao <span class="text-gradient">topo</span>
       </h2>
-      <div class="divider-green"></div>
+      <div class="divider-green reveal"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 stagger">

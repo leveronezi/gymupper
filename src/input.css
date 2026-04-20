@@ -358,6 +358,26 @@
   }
 }
 
+/* ─── Stat cell (border fix: 2-col mobile → 4-col desktop) ─────── */
+@layer components {
+  .stat-cell {
+    border-right: 1px solid rgba(255,255,255,0.05);
+  }
+  /* Right column has no right-border on mobile (2-col grid) */
+  .stat-cell:nth-child(2n) {
+    border-right: none;
+  }
+  /* At lg (4-col) restore borders for cols 1-3, remove only last */
+  @media (min-width: 1024px) {
+    .stat-cell:nth-child(2n) {
+      border-right: 1px solid rgba(255,255,255,0.05);
+    }
+    .stat-cell:last-child {
+      border-right: none;
+    }
+  }
+}
+
 /* ─── Sections ──────────────────────────────────────────────────── */
 @layer components {
   .section-wrap {

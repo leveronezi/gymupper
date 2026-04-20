@@ -5,13 +5,13 @@
   <div class="section-wrap relative z-10">
 
     <div class="section-header centered stagger">
-      <span class="section-label">Processo</span>
-      <h2 class="text-h2">
+      <span class="section-label reveal">Processo</span>
+      <h2 class="text-h2 reveal">
         Como levamos sua academia<br>
         ao <span class="text-gradient">próximo nível</span>
       </h2>
-      <div class="divider-green"></div>
-      <p class="section-sub text-center">
+      <div class="divider-green reveal"></div>
+      <p class="section-sub text-center reveal">
         Um processo transparente, com metas claras e relatórios reais. Você vê cada resultado acontecer.
       </p>
     </div>

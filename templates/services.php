@@ -5,13 +5,13 @@
   <div class="section-wrap relative z-10">
 
     <div class="section-header centered stagger">
-      <span class="section-label">O que fazemos</span>
-      <h2 class="text-h2">
+      <span class="section-label reveal">O que fazemos</span>
+      <h2 class="text-h2 reveal">
         Tudo que sua academia precisa<br>
         para <span class="text-gradient">crescer de verdade</span>
       </h2>
-      <div class="divider-green"></div>
-      <p class="section-sub text-center">
+      <div class="divider-green reveal"></div>
+      <p class="section-sub text-center reveal">
         Estratégias comprovadas para academias que querem encher a grade e ter crescimento previsível todo mês.
       </p>
     </div>

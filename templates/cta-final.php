@@ -5,20 +5,20 @@
   <div class="section-wrap relative z-10">
     <div class="max-w-[700px] mx-auto text-center stagger">
 
-      <span class="section-label">Comece agora</span>
+      <span class="section-label reveal">Comece agora</span>
 
-      <h2 class="text-h2 mt-1">
+      <h2 class="text-h2 mt-1 reveal">
         Sua academia merece estar<br>
         no <span class="text-gradient">topo do Google</span>
       </h2>
 
-      <div class="divider-green mx-auto mt-4"></div>
+      <div class="divider-green mx-auto mt-4 reveal"></div>
 
-      <p class="section-sub text-center mx-auto mt-2">
+      <p class="section-sub text-center mx-auto mt-2 reveal">
         Faça um diagnóstico gratuito com nossos especialistas e descubra quantos alunos você está deixando de captar.
       </p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 reveal">
         <a href="<?php echo esc_url(theme_whatsapp_link('Quero o diagnóstico gratuito da minha academia!')); ?>"
            target="_blank" rel="noopener"
            class="btn btn-primary btn-cta-pulse w-full sm:w-auto text-base px-8 py-4">
