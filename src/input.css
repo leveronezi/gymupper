@@ -470,3 +470,16 @@
 .hero-fade > *:nth-child(3) { animation-delay: 0.25s; }
 .hero-fade > *:nth-child(4) { animation-delay: 0.35s; }
 .hero-fade > *:nth-child(5) { animation-delay: 0.45s; }
+
+/* ─── Critical overrides (unlayered — garante prioridade sobre CSS do WP) ── */
+/* Tailwind v4 usa @layer, que tem menor prioridade que CSS não-layered do WP */
+html, body {
+  background-color: #07090f;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-dark    { background-color: #07090f; }
+.bg-surface { background-color: #0d1117; }
+.bg-card    { background-color: #111827; }

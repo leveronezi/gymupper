@@ -1,6 +1,6 @@
 <?php
 
-define('THEME_VERSION', '1.0.0');
+define('THEME_VERSION', '2.0.0');
 define('THEME_URI', get_template_directory_uri());
 
 add_action('after_setup_theme', function () {
